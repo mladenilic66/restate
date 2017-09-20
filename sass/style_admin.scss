@@ -1,0 +1,316 @@
+/* general */
+body {
+	padding:0;
+    margin:0;
+	font-size:14px;
+	font-family: 'Open Sans' , Tahoma , sans-serif;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+	color: #5E5E5E;
+}
+
+h1 { font-size:3em;}
+h2 { font-size:2.2em;}
+h3 { font-size:2em;}
+h4 { font-size:1.6em;}
+h5 { font-size:1.4em;}
+h6 { font-size:1.2em;}
+
+h1 {
+    font-size: 4vw;
+}
+
+label {
+    color: #777;
+}
+
+form {
+	overflow: hidden;
+}
+input[type="submit"] {
+    cursor: pointer;
+	outline: none;
+}
+
+$link_col: #eee;
+a {
+	color: $link_col;
+	text-decoration: none;
+	&:link,&:link {
+        color: $link_col;
+	}
+	&:active {
+	    color: #ddd;
+	}
+}
+
+
+p {
+	color: $link_col;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+header {
+	text-align: center;
+}
+
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    background: #041C27;
+    z-index: 1;
+}
+
+
+.sidebar_header {
+	padding: 10px;
+	text-align: center;
+}
+.sidebar_content {
+	margin-top: 50px;
+	overflow: hidden;
+	ul {
+		li {
+			a {
+				word-wrap: break-word;
+				text-transform: uppercase;
+				font-size: 1.3em;
+				font-weight: 700;
+			    padding: 15px;
+			    display: list-item;
+			    &:hover {
+			    	background: #0B3345;
+			    }
+			}
+		}
+	}
+}
+
+.main {
+    padding-left: 240px;
+    height: 100%;
+    overflow: hidden;
+}
+.header {
+	position: fixed;
+	width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.header_content {
+	float: right;
+}
+.content {
+	overflow: hidden;
+	padding: 80px 20px 20px 20px;
+	float: left;
+	h3 {
+		span {
+		    color: #041C27;
+	    }
+	}
+}
+
+
+
+
+
+.users {
+	overflow: hidden;
+	float: left;
+	width: 100%;
+	padding: 20px 0;
+}
+.users_form,.cities_form,.structure_form {
+	padding: 20px 0;
+	overflow: hidden;
+}
+.users_inner {
+	overflow: hidden;
+}
+.users_inputs {
+	@extend .structure_inputs;
+	margin-right: 30px;
+	min-height: 80px;
+}
+.pagination_inner {
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 5px;
+	p {
+		color: #000;
+		font-weight: 400;
+		float: left;
+		margin: 0;
+		padding: 0;
+    	padding: 5px;
+	}
+    a {
+    	display: block;
+    	float: left;
+    	color: #041C27;
+    	padding: 5px;
+    }
+}
+.selected_page {
+	background: $link_col;
+}
+
+.cities_inputs,.structure_inputs {
+	float: left;
+	padding: 10px 0;
+}
+
+
+
+.msg {
+    color: darkgreen;
+    text-decoration: underline;
+}
+
+
+.content_header {
+	border-bottom: 2px solid #eee;
+}
+
+
+.inputs_admin,.users_select,input[name="avatar"] {
+	padding: 8px;
+	font-size: 1.3em;
+}
+.inputs_admin {
+    min-width: 300px;
+}
+.users_select {
+	min-width: 320px;
+}
+.btn_admin {
+	float: left;
+}
+.btn_delete * {
+    color: #0B3345;
+}
+input[name="user_add"],input[name="city_add"],input[name="structure_add"],input[name="equipment_add"] {
+	padding: 11px;
+	font-size: 1.2em;
+	font-weight: 700;
+	text-transform: uppercase;
+	background: #041C27;
+	color: #fff;
+	border: none;
+}
+input[name="user_add"]:hover,input[name="city_add"]:hover,input[name="structure_add"]:hover,input[name="equipment_add"]:hover {
+	background: #0B3345;
+}
+input[name="avatar"] {
+	width: 305px;
+}
+.cities_inputs {
+	margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+.users table th,.cities table th,.structure table th {
+	text-align: left;
+	padding: 10px;
+}
+.users table td,.cities table td,.structure table td {
+	border-bottom: 1px solid #ddd;
+	word-break: break-all;
+	padding: 10px;
+}
+.users table,.cities table,.structure table {
+	width: 100%;
+	font-size: 0.9em;
+	margin-top: 20px;
+}
+.thumbnail_img {
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+}
+
+
+.user_nav {
+	float: left;
+	text-transform: uppercase;
+	a {
+		&:hover {
+            color: #ddd;
+		}
+	}
+}
+.user_nav a,.dropbtn,.dropdown_content a,.logout_form input[type="submit"] {
+	font-size: 18px;
+	display: block;
+}
+.user_nav a,.dropbtn {
+	padding: 15px;
+    font-weight: 700;
+}
+.dropbtn {
+	margin: 0;
+}
+.arrow_rotate {
+	transform: rotateZ( 180deg );
+}
+
+
+input[name="logout"] {
+	padding: 7px 0px;
+}
+
+.logout_form input[type="submit"] {
+	background: none;
+	border: none;
+	width: 100%;
+	color: #eee;
+}
+.user_dropdown {
+    float: left;
+    position: relative;
+	cursor: pointer;
+}
+.dropdown_content {
+	display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    min-width: 150px;
+    right: 0;
+    text-align: center;
+    a {
+	    padding: 5px;
+    }
+}
+.dropdown_content a:hover,.logout_form input:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+
+.error_outline {
+	outline: 2px solid red;
+	outline-offset: -2px;
+}
+.form_errors {
+	color: red;
+}
