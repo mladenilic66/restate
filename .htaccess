@@ -1,4 +1,2 @@
 RewriteEngine On
 RewriteRule ^functions$ index.php [NC,L]
-
-

@@ -6,4 +6,6 @@ $con = mysqli_connect("localhost", "root", "", "real_estate");
 		die("Database connection error: ".$error);
 	}
 
+set_time_limit (300);
+
 ?>

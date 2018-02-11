@@ -86,7 +86,7 @@ html, body {
 }
 .sp-large a img {
 	width: 100%;
-	height: 800px;
+	/*height: 800px;*/
 }
 .sp-large a {
 	display: block;

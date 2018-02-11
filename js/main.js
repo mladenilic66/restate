@@ -1,49 +1,76 @@
 // user dropdown menu
 $(document).ready(function() {
     $(".user_dropdown").click(function() {
-        $(".dropdown_content").toggle();
+        $(".dropdown_content").slideToggle();
     });
 });
+
+/* ------------------------------------------------- */
 
 // show or hide filters form
-$(document).ready(function() {
-
-    $(".f_btn_1").click(function() {
-    	$(".f_btn_1 .fa-angle-down").toggleClass("arrow_rotate");
-        $(".f_cnt_1").toggle();
-        $(this).toggleClass("f_btn_color");
-        $(".f_cnt_1 .f_cnt_2").hide();
+$(function () {
+    $(".park_wrap a").click(function() {
+    	$(".park_wrap a .fa-caret-down").toggleClass("arrow_rotate");
+        $(".park_wrap_inner").toggle();
     });
 
-    $(".f_btn_2").click(function() {
-    	$(".f_btn_2 .fa-angle-down").toggleClass("arrow_rotate");
-        $(".f_cnt_2").toggle();
-        $(this).toggleClass("f_btn_color");
-        $(".f_cnt_1 .f_cnt_2").hide();
+    $(".heat_wrap a").click(function() {
+    	$(".heat_wrap a .fa-caret-down").toggleClass("arrow_rotate");
+        $(".heat_wrap_inner").toggle();
     });
 
-    //show or hide user dropdown on click
+    $(".price_wrap a").click(function() {
+        $(".price_wrap a .fa-caret-down").toggleClass("arrow_rotate");
+        $(".price_inner").toggle();
+    });
+
+    $(".qu_wrap a").click(function() {
+        $(".qu_wrap .fa-caret-down").toggleClass("arrow_rotate");
+        $(".qu_inner").toggle();
+    });
+
+    // 
     $(".dropbtn").click(function() {
-    	$(".fa-caret-down").toggleClass("arrow_rotate");
+    	$("dropbtn .fa-caret-down").toggleClass("arrow_rotate");
     });
 });
 
+/* ------------------------------------------------- */
+
+// stay at the samo position when clicked
+$('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+});
+
+/* ------------------------------------------------- */
 
 // login & register dropdown menu
-$(document).ready(function() {
-
+$(function () {
 	//show or hide login form
     $(".log_form").hover(function() {
         $(".login").toggle();
     });
+});
 
-	//show or hide register form
-    $(".register_form").hover(function() {
-        $(".register").toggle();
+/* ------------------------------------------------- */
+
+// show or hide filters menu on click
+$(function () {
+    $(".filter_dropdown a").click(function() {
+        $(".filters_menu").slideToggle();
     });
 });
 
+/* ------------------------------------------------- */
 
+// dropdown menu
+$(document).ready(function() {
+    $(".menu_dropdown").click(function() {
+        $("#nav,.user_dropdown,.header_buttons").slideToggle();
+    });
+});
+
+/* ------------------------------------------------- */
 
 // load more data
 $(function () {
@@ -59,5 +86,48 @@ $(function () {
         $("html,body").animate({
             scrollTop: $(this).offset().top
         }, 2000);
+    });
+});
+
+/* ------------------------------------------------- */
+
+// show menu (display fix)
+$(document).ready(function() {
+
+  var menu = $('.user_dropdown,#nav,#adv_search_form,.header_buttons');
+  
+    $(window).resize(function() {
+
+        var window_width = $(window).width();
+
+        if(window_width > 768 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
+});
+
+
+// show filters menu (display fix)
+$(document).ready(function() {
+
+  var menu = $('.filters_menu');
+  
+    $(window).resize(function() {
+
+        var window_width = $(window).width();
+
+        if(window_width < 1023 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
+});
+
+/* ------------------------------------------------- */
+
+// show advanced filters
+$(document).ready(function() {
+    //show or hide login form
+    $(".btn_filters").click(function() {
+        $("#adv_search_form").slideToggle();
     });
 });

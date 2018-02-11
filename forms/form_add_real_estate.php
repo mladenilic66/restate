@@ -81,7 +81,7 @@
         <div class="add_rs_description">
             <div class="add_rs_inputs">
                 <label for="description">Description</label><br>
-                <textarea rows="15" id="description" name="description" placeholder="Enter Description"></textarea><br>
+                <textarea rows="18" id="description" name="description" placeholder="Enter Description"></textarea><br>
                 <span id="description_error" class="form_errors"></span>
             </div>
         </div>
@@ -174,7 +174,7 @@
         </div>
         <div class="add_rs_submit_btn">
             <input type="hidden" name="form_id" value="add_real_estate">
-            <input class="add_rs_submit" type="submit" name="add_real_estate" value="+ add real estate">
+            <input class="add_rs_submit" type="submit" name="add_real_estate" value="publish">
         </div>
     </div>
 </form>

@@ -1,0 +1,10 @@
+node_modules
+db_con.php
+uploads/
+
+*.ini
+*.lnk
+*.log
+Thumbs.db
+.DS_Store
+.htaccess

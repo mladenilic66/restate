@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 ?>
-<?php include_once("/header.php");?>
+<?php include_once("header.php");?>
 
 	<div class="sidebar">
 		<div class="sidebar_header">
@@ -11,27 +11,27 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 		</div>
 		<div class="sidebar_content">
 			<ul>
-			    <li><a href="/admin/dashboard.php?home"><i class="fa fa-th" aria-hidden="true"></i>&nbsp; Dashboard</a></li>
-				<li><a href="/admin/dashboard.php?users"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; Users</a></li>
-				<li><a href="/admin/dashboard.php?cities"><i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Add City</a></li>
-				<li><a href="/admin/dashboard.php?structure"><i class="fa fa-cube" aria-hidden="true"></i>&nbsp; Add Structure</a></li>
-				<li><a href="/admin/dashboard.php?equipment"><i class="fa fa-television" aria-hidden="true"></i>&nbsp; Add Equipment</a></li>
+			    <li><a href="admin/dashboard.php?home"><i class="fa fa-th" aria-hidden="true"></i>&nbsp; Dashboard</a></li>
+				<li><a href="admin/dashboard.php?users"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; Users</a></li>
+				<li><a href="admin/dashboard.php?cities"><i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Add City</a></li>
+				<li><a href="admin/dashboard.php?structure"><i class="fa fa-cube" aria-hidden="true"></i>&nbsp; Add Structure</a></li>
+				<li><a href="admin/dashboard.php?equipment"><i class="fa fa-television" aria-hidden="true"></i>&nbsp; Add Equipment</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="header">
         <div class="header_content">
 	        <div class="user_nav">
-                <a href="/index.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+                <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
             </div>
             <div class="user_nav">
-                <a href="/ad.php">&nbsp;+ add real estate</a>
+                <a href="ad.php">&nbsp;+ add real estate</a>
             </div>
             <?php if (isset($_SESSION['usr_id'])) { ?>
 		        <div class="user_dropdown">
                 	<p class="dropbtn"><?=$_SESSION['usr_name']?>&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></p>
 					<div class="dropdown_content">
-					    <a href="/profile.php">Profile</a>
+					    <a href="profile.php">Profile</a>
 					    <div class="logout_form">
 		                    <?php include("../forms/form_logout.php"); ?>
 				        </div>
@@ -42,9 +42,11 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 	</div>
 	<div class="main">
 	    <div class="content">
+
 		<?php if (isset($_GET["home"])) { ?>
 			<h3>Welcome back <span><?=$_SESSION['usr_name']?></span></h3>
 		<?php } ?>
+
 		<?php if (isset($_GET["users"])) { ?>
 			<div class="content_header">
 				<h3>Add Users</h3>
@@ -114,7 +116,7 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 						    	<div class="pagination_inner">
 							    	<p>Users: <?=$num_row?></p>
 						    	    <?php for($i=1; $i<=$pages; $i++) { ?>
-	                                    <a href="/admin/dashboard.php?users&page=<?=$i?>"<?php if ($page==$i) { echo "class='selected_page'"; echo "onclick='return false;'"; }?>><?=$i?></a>
+	                                    <a href="admin/dashboard.php?users&page=<?=$i?>"<?php if ($page==$i) { echo "class='selected_page'"; echo "onclick='return false;'"; }?>><?=$i?></a>
 	                                <?php } ?>
 					            </div>
 						    </div>
@@ -122,6 +124,7 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 					</tr>
 				</table>
 	    	</div>
+
 	    	<?php } ?>
 
 	    	<?php if (isset($_GET["cities"])) { ?>
@@ -160,20 +163,21 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 						<tr>
 							<td><?=++$counter?></td>
 							<td><?=$row['title']?></td>
-							<td><a href="/admin/dashboard.php?cities&del=<?=$row['id']?>" class="btn_delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+							<td><a href="admin/dashboard.php?cities&del=<?=$row['id']?>" class="btn_delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 							<?php
 							    // deleting data
                                 if(isset($_GET['del'])){
 							        $del_id = $_REQUEST['del'];
 							        $sql2 = "DELETE FROM cities WHERE id=".$del_id;
 							        $result2 = mysqli_query($con, $sql2);
-							            header("Location: /admin/dashboard.php?cities");
+							            header("Location: admin/dashboard.php?cities");
 						        }
 							?>
 						</tr>
                     <?php } ?>
 				    </table>
 	    	    </div>
+
 		        <?php } ?>
 
 		    	<?php if (isset($_GET["structure"])) { ?>
@@ -211,20 +215,21 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 							<tr>
 								<td><?=++$counter?></td>
 								<td><?=$row['title']?></td>
-								<td><a href="/admin/dashboard.php?structure&del=<?=$row['id']?>" class="btn_delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+								<td><a href="admin/dashboard.php?structure&del=<?=$row['id']?>" class="btn_delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 								<?php
 								    // deleting data
 	                                if(isset($_GET['del'])){
 								        $del_id = $_GET['del'];
 								        $sql2 = "DELETE FROM structures WHERE id=".$del_id;
 								        $result2 = mysqli_query($con, $sql2);
-								            header("Location: /admin/dashboard.php?structure");
+								            header("Location: admin/dashboard.php?structure");
 							        }
 								?>
 							</tr>
 	                    <?php } ?>
 					    </table>
 	    	        </div>
+
 		        <?php } ?>
 
 		        <?php if (isset($_GET["equipment"])) { ?>
@@ -262,20 +267,21 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
 							<tr>
 								<td><?=++$counter?></td>
 								<td><?=$row['title']?></td>
-								<td><a href="/admin/dashboard.php?equipment&del=<?=$row['id']?>" class="btn_delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+								<td><a href="admin/dashboard.php?equipment&del=<?=$row['id']?>" class="btn_delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 								<?php
 								    // deleting data
 	                                if(isset($_GET['del'])){
 								        $del_id = $_GET['del'];
 								        $sql2 = "DELETE FROM equipment WHERE id=".$del_id;
 								        $result2 = mysqli_query($con, $sql2);
-								            header("Location: /admin/dashboard.php?equipment");
+								            header("Location: admin/dashboard.php?equipment");
 							        }
 								?>
 							</tr>
 	                    <?php } ?>
 					    </table>
 	    	        </div>
+
 		        <?php } ?>
 	    </div>
 	</div>
@@ -285,4 +291,5 @@ if (isset($_SESSION["usr_id"]) && $_SESSION["usr_role"] == 1 ) {
     </footer>
 </body>
 </html>
+
 <?php } else { header("Location: ../index.php"); } ?>

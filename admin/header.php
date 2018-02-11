@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Renting or selling real estate? This is the place where you can sell,rent and search property">
 	<title>Admin | Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
 	<link href="/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

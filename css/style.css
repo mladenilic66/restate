@@ -58,12 +58,14 @@ header {
 select, button, input[type="submit"], input[type="checkbox"] {
   cursor: pointer; }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset; }
+input,textarea,#mceu_11 {
+  box-sizing: border-box; }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
 textarea {
   width: 100%;
-  box-sizing: border-box;
   resize: vertical; }
 
 select option {
@@ -73,16 +75,11 @@ select option {
   position: relative; }
 
 .overlay {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto; }
 
 .negative {
   color: #fff; }
-
-.add_new_rs a {
-  color: #28846D; }
-  .add_new_rs a:hover {
-    color: #273746; }
 
 #header {
   background: #fff;
@@ -91,7 +88,7 @@ select option {
   overflow: inherit;
   border-bottom: 2px solid #f5f5f5;
   position: fixed;
-  z-index: 1; }
+  z-index: 2; }
 
 #logo {
   float: left;
@@ -101,6 +98,18 @@ select option {
   width: 193px;
   height: 70px; }
 
+.menu_dropdown {
+  display: none;
+  padding: 20px;
+  float: right;
+}
+.sp-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.btn_filters {
+  display: none;
+}
 #nav {
   padding: 20px;
   float: right; }
@@ -109,7 +118,7 @@ select option {
     position: relative;
     border-radius: 10px;
     transition: 0.2s all ease; }
-    #nav ul li a {
+    #nav ul li a,.menu_dropdown ul li a {
       display: block;
       padding: 15px;
       height: 20px;
@@ -168,8 +177,8 @@ select option {
   overflow: hidden; }
 
 .log_reg_wrapper {
-  padding: 100px 0;
-  width: 500px;
+  padding: 100px 10px 10px 10px;
+  max-width: 500px;
   margin: 0 auto; }
 
 .log_form, .register_form {
@@ -209,9 +218,8 @@ input[name="logout"] {
   margin-bottom: 20px;
   text-align: left; }
   .log_reg_inputs input {
-    box-sizing: border-box;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     font-size: 1em; }
     .log_reg_inputs input::placeholder {
       color: #bbb; }
@@ -244,10 +252,10 @@ input[name="login"]:hover, input[name="register"]:hover {
   font-size: 1.5em; }
 
 .button_search {
-  margin-left: 20px;
+  margin-left: 10px;
   transition: .3s all ease;
   border-radius: 7px;
-  padding: 7px;
+  padding: 6px;
   background: #28846D;
   color: #fff; }
   .button_search:hover {
@@ -278,11 +286,24 @@ input[name="login"]:hover, input[name="register"]:hover {
   color: #273746;
   outline: none; }
 
-#p_min, #p_max, #qu_min, #qu_max {
-  width: 90px; }
+#p_min_search, #p_max_search {
+  width: 110px;
+}
 
+
+
+/* search form*/
+.form_search {
+  overflow: hidden;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.search_wrap {
+  float: left;
+  margin-right: 5px;
+}
 #search_box {
-  min-width: 350px; }
+  min-width: 220px; }
 
 #search_box, #p_min, #p_max {
   font-size: 1.1em; }
@@ -317,6 +338,8 @@ input[name="login"]:hover, input[name="register"]:hover {
 .logout_form input:hover {
   color: #28846D; }
 
+
+
 /* reset button */
 .fa-refresh {
   transition: .8s all ease; }
@@ -339,56 +362,80 @@ input[name="login"]:hover, input[name="register"]:hover {
   clear: both; }
 
 #nav_top {
-  height: 100%;
-  padding: 20px;
+  padding: 10px;
   background: #f5f5f5; }
 
 #nav_top .content {
-  float: left; }
+  float: left;
+}
 
+.price_inner,.qu_inner,.filters_content {
+  box-shadow:inset 0px 0px 0px 1px #ddd;
+}
+
+.price_wrap,.qu_wrap,.park_wrap,.heat_wrap {
+  box-shadow:inset 0px 0px 0px 1px #ddd;
+  margin-left: 10px;
+  background-color: #fff;
+  position: relative;
+  float: right;
+}
+.price_wrap a,.qu_wrap a,.park_wrap a,.heat_wrap a {
+  display: block;
+}
+.price_inner,.qu_inner,.filters_content {
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  display: none;
+}
 #nav_top form {
   position: relative;
   margin: 0 auto;
-  max-width: 1250px; }
+  max-width: 961px; }
 
 #nav_top form input, #nav_top form select {
   outline: none;
-  border: 1.5px solid #ddd; }
+  border: 1px solid #ddd; }
 
-#nav_top form input, #nav_top form select {
+.qu_inner input:last-of-type,
+.price_inner input:last-of-type {
+  margin-top: 10px;
+}
+
+#nav_top form input,
+#nav_top form select,
+.qu_wrap a,
+.price_wrap a,
+.heat_wrap a,
+.park_wrap a {
   padding: 8px;
   font-size: 1.1em; }
 
-.filter_btn {
-  margin-left: 10px;
-  float: left;
-  padding: 7px;
-  cursor: pointer; }
-  .filter_btn p {
-    margin: 0;
-    padding: 3px;
-    font-weight: 700; }
-  .filter_btn:hover {
-    background: #eee; }
-
-.inner {
-  position: relative;
-  float: left; }
-
-.filter_content {
+.filter_dropdown {
+  float: right;
+  padding: 20px 20px 20px 0;
+}
+.filter_dropdown a {
+  display: block;
+  padding: 10px 10px 10px 0;
+  font-size: 1.5em;
+}
+.filters_menu {
   display: none;
-  position: absolute;
+  z-index: 1;
+  position: fixed;
+  top: 93px;
+  width: 100%;
+  background-color: #fff;
+}
+.filters_content {
   min-width: 200px;
-  top: 39px;
-  padding: 10px;
-  left: 10px;
-  background: #eee; }
+}
+
 
 .filter_checkbox {
   padding: 5px; }
-
-.f_btn_color {
-  background: #eee; }
 
 input[type="checkbox"]:not(:checked),
 input[type="checkbox"]:checked {
@@ -396,6 +443,7 @@ input[type="checkbox"]:checked {
   height: 15px; }
 
 #load_more {
+  flex-basis: 100%;
   padding: 10px;
   background: #f1f1f1;
   clear: both;
@@ -406,8 +454,22 @@ input[type="checkbox"]:checked {
   #load_more:hover {
     background: #e9e9e9; }
 
+.add_rs_top,
+.add_rs_title,
+.add_rs_middle,
+.add_rs_description,
+.add_rs_lower,
+.add_rs_bottom,
 .result {
-  width: 1200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start space-between;
+}
+
+
+
+.result {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px; }
 
@@ -430,7 +492,6 @@ input[type="checkbox"]:checked {
   display: none;
   width: 292px;
   margin: 0 10px 50px 0;
-  float: left;
   overflow: hidden;
   background: #f8f8f8; }
   .data:nth-of-type(4n) {
@@ -459,8 +520,7 @@ input[type="checkbox"]:checked {
   border-bottom: 3px solid #28846D; }
 
 .data_img {
-  width: 100%;
-  height: 200px; }
+  width: 100%; }
 
 .data_content {
   overflow: hidden;
@@ -487,6 +547,38 @@ input[type="checkbox"]:checked {
   .rooms i {
     font-size: 1.6em;
     color: #bbb; }
+
+/* service */
+.service_top {
+  padding: 200px 0;
+  background: url("../images/service-hero.jpg") center center/cover;
+}
+.service_flex {
+  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start space-between;
+}
+.service_middle {
+  padding: 100px 0;
+  overflow: hidden;
+}
+.service_article {
+  flex-basis: 20%;
+  padding: 50px;
+  background-color: #f5f5f5;
+}
+.service_article h4 {
+  margin-bottom: 20px;
+}
+.service_article i {
+  color: #5E5E5E;
+  font-size: 5em;
+}
+.service_article:nth-of-type(3n) {
+  margin-right: 0;
+}
+
 
 /* about.php */
 .about_inner {
@@ -566,9 +658,15 @@ input[type="checkbox"]:checked {
   .property_user h6, .property_equip h6 {
     padding: 10px;
     border-bottom: 1px solid #f0f1f2; }
-  .property_user h4, .property_equip h4 {
+  .property_user h4, .property_equip h4, .property_user_info {
     padding: 10px; }
 
+.property_user_info a {
+  display: block;
+}
+.property_equip_all p {
+  margin: 10px 0;
+}
 .property_user_img img {
   border-radius: 50%;
   width: 150px;
@@ -577,7 +675,7 @@ input[type="checkbox"]:checked {
 .user_info {
   float: right;
   padding: 33px 0 33px 0;
-  margin-right: 20px; }
+  margin-left: 20px; }
   .user_info:nth-of-type(3) {
     margin-right: 0; }
   .user_info a {
@@ -589,10 +687,11 @@ input[type="checkbox"]:checked {
   overflow: hidden;
   position: relative; }
 
+
 /* ad.php file */
 .heading {
   background: url("../images/65.jpeg") center center/cover;
-  padding: 230px 0; }
+  padding: 230px 20px; }
 
 .info_head {
   padding: 20px;
@@ -603,7 +702,7 @@ input[type="checkbox"]:checked {
     text-align: center; }
 
 .add_rs {
-  padding: 100px 0; }
+  padding: 100px 20px; }
 
 .headline {
   text-align: left;
@@ -611,8 +710,8 @@ input[type="checkbox"]:checked {
   margin-bottom: 50px; }
 
 .error_outline {
-  outline: 2px solid red;
-  outline-offset: -2px; }
+  border: 1px solid red;
+  outline: none; }
 
 .messages {
   padding: 5px; }
@@ -631,10 +730,10 @@ input[type="checkbox"]:checked {
 /* contact.php */
 .contact_form_wrap {
   margin: 0 auto;
-  width: 500px; }
+  max-width: 540px; }
 
 #contact_form {
-  padding: 50px 0; }
+  padding: 70px 20px; }
 
 .contact_inputs {
   text-align: left;
@@ -642,7 +741,6 @@ input[type="checkbox"]:checked {
   margin-bottom: 20px; }
 
 .contact_input {
-  box-sizing: border-box;
   font-size: 1.3em;
   width: 100%;
   padding: 10px; }
@@ -650,6 +748,7 @@ input[type="checkbox"]:checked {
 .sent {
   padding: 100px 0;
   text-align: center; }
+
 
 /* add real estate form */
 .add_rs_inner,
@@ -660,46 +759,33 @@ input[type="checkbox"]:checked {
 .add_rs_lower,
 .add_rs_equipment,
 .add_rs_bottom {
-  float: none;
   overflow: hidden;
   margin-bottom: 40px; }
 
+.add_rs_title .add_rs_inputs,
+.add_rs_description .add_rs_inputs {
+  flex-basis: 100%; }
+
 .add_rs_top .add_rs_inputs,
-.add_rs_middle .add_rs_inputs,
 .add_rs_lower .add_rs_inputs,
+.add_rs_middle .add_rs_inputs {
+  flex-basis: 32%; }
 .add_rs_bottom .add_rs_inputs {
-  float: left; }
+  flex-basis: 23%; }
 
-.add_rs_top select, .add_rs_lower select {
-  min-width: 380px; }
+.add_rs_inputs input,
+.add_rs_inputs select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.4em;
+}
 
-.add_rs_bottom select, .add_rs_bottom input {
-  min-width: 280px; }
-
-.add_rs_bottom input[type="file"] {
-  width: 280px; }
-
-.add_rs_inputs {
-  float: none; }
   .add_rs_inputs input::placeholder {
     color: #bbb; }
   .add_rs_inputs label {
     float: left;
     font-size: 0.9em; }
 
-#address {
-  min-width: 800px; }
-
-.add_rs_title .add_rs_inputs input {
-  width: 100%; }
-
-.add_rs_inputs select, .add_rs_inputs input {
-  margin-right: 20px;
-  padding: 10px;
-  font-size: 1.4em; }
-
-.add_rs_inputs input, #mceu_11 {
-  box-sizing: border-box; }
 
 .add_rs_eq_cont {
   float: left;
@@ -742,20 +828,13 @@ input[type="checkbox"]:checked {
   overflow: hidden;
   padding: 140px 0; }
 
-.profile_img_cont {
-  padding: 30px;
-  border-radius: 50%;
-  box-shadow: inset 0 0 15px #ddd;
+.profile_img {
   float: left; }
 
 .profile_img img {
-  transition: .4s all ease;
   border-radius: 50%;
-  box-shadow: 0 0 15px #ddd;
   width: 300px;
   height: 300px; }
-  .profile_img img:hover {
-    transform: rotateZ(10deg); }
 
 .profile_info {
   padding: 50px;

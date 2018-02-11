@@ -2,7 +2,7 @@
 
 <!-- advanced search form -->
 
-<form action="/search.php" method="get">
+<form id="adv_search_form" action="/search.php" method="get">
     <div class="content">
         <select id="categories" name="categories">
         <?php
@@ -43,29 +43,22 @@
             <?php } ?>
         </select>
 
-        <label for="rooms">Rooms:</label>
         <select id="rooms" name="rooms">
-        <?php
-            $sql = "SELECT * FROM rooms_number";
-            $result = mysqli_query($con,$sql);
+            <option value="0" selected="selected">Rooms</option>
 
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
+            <?php
+                $sql = "SELECT * FROM rooms_number";
+                $result = mysqli_query($con,$sql);
+
+                while ($row = mysqli_fetch_assoc($result)) {
+            ?>
             <option value="<?=$row["title"]?>"><?=$row["title"]?></option>
-        <?php } ?>
+            <?php } ?>
         </select>
 
-        <input id="p_min" name="p_min" type="number" placeholder="Min price">
-        <input id="p_max" name="p_max" type="number" placeholder="Max price">
-
-        <input id="qu_min" name="qu_min" type="number" placeholder="Min Quadrature">
-        <input id="qu_max" name="qu_max" type="number" placeholder="Max Quadrature">
-    </div>
-        <div class="inner">
-            <div class="filter_btn f_btn_1">
-                <p>Parking Lot&nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></p>
-            </div>
-            <div class="filter_content f_cnt_1">
+        <div class="park_wrap">
+            <a href="#">Parking Lot&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="filters_content park_wrap_inner">
                 <?php
                     $sql = "SELECT * FROM parking_lot";
                     $result = mysqli_query($con,$sql);
@@ -79,11 +72,9 @@
             </div>
         </div>
 
-        <div class="inner">
-            <div class="filter_btn f_btn_2">
-                <p>Heating &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></p>
-            </div>
-            <div class="filter_content f_cnt_2">
+        <div class="heat_wrap">
+            <a href="#">Heating &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="filters_content heat_wrap_inner">
                 <?php
                     $sql = "SELECT * FROM heating";
                     $result = mysqli_query($con,$sql);
@@ -96,6 +87,23 @@
                 <?php } ?>
             </div>
         </div>
+
+        <div class="qu_wrap">
+            <a href="#">Quadrature&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="qu_inner">
+                <input id="qu_min" name="qu_min" type="number" placeholder="Min Quadrature">
+                <input id="qu_max" name="qu_max" type="number" placeholder="Max Quadrature">
+            </div>
+        </div>
+
+        <div class="price_wrap">
+            <a href="#">Price&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="price_inner">
+                <input id="p_min" name="p_min" type="number" placeholder="Min price">
+                <input id="p_max" name="p_max" type="number" placeholder="Max price">
+            </div>
+        </div>
+    </div>
     
     <button class="button_search" type="submit" value="ok" name="submit_adv_search"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
 </form>

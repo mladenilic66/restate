@@ -1,0 +1,299 @@
+@media screen and (min-width:1024px) and (max-width:1260px) {
+
+    .menu_dropdown {
+        display: none;
+    }
+    .profile_info,
+    .profile_img {
+        float: none;
+    }
+    .profile_img,
+    #profile_table h1 {
+        text-align: center;
+    }
+    .profile_container {
+        width: 100%;
+    }
+    .profile_info {
+        width: 90%;
+    }
+}
+
+/* tablets */
+@media screen and (min-width:768px) and (max-width:1023px) {
+
+    #nav,
+    .user_info,
+    .button_reset,
+    #adv_search_form,
+    .header_buttons,
+    .property_top,
+    .filter_dropdown {
+        display: none;
+    }
+    .headline,
+    #nav_top {
+        text-align: center;
+    }
+    .menu_dropdown,
+    .btn_filters,
+    .filters_menu {
+        display: block;
+    }
+    .add_rs_inputs {
+        float: left;
+        margin: 10px 0;
+    }
+    .add_rs_top,
+    .add_rs_title,
+    .add_rs_middle,
+    .add_rs_description,
+    .add_rs_lower,
+    .button_search,
+    .add_rs_inputs input,
+    .add_rs_inputs select {
+        margin: 0;
+    }
+
+    .form_search,
+    #address,
+    .content input,
+    .content select,
+    .profile_container {
+        width: 100%;
+    }
+
+    .add_rs_top .add_rs_inputs,
+    .add_rs_lower .add_rs_inputs,
+    .add_rs_middle .add_rs_inputs,
+    .add_rs_bottom .add_rs_inputs {
+        flex-basis: 100%;
+    }
+
+    #adv_search_form,
+    .inputs_search,
+    .button_search,
+    .price_wrap,
+    .heat_wrap,
+    #p_min_search,
+    #p_max_search,
+    .park_wrap,
+    .qu_wrap {
+        width: 500px;
+    }
+    .price_wrap,
+    .heat_wrap,
+    .price_wrap,
+    .park_wrap,
+    .qu_wrap {
+        margin: 10px 0 0 0;
+    }
+    .filters_content,
+    .qu_inner,
+    .price_inner {
+        position: relative;
+    }
+    .search_wrap {
+        float: none;
+        margin: 0 0 10px 0;
+    }
+    .content input,
+    .content select,
+    .button_search {
+        margin-top: 10px;
+    }
+
+    .profile_info,
+    .profile_img {
+        float: none;
+    }
+    .profile_img,
+    #profile_table h1 {
+        text-align: center;
+    }
+    .profile_info {
+        width: 90%;
+    }
+    .sp-wrap {
+        margin-top: 39px;
+        padding: 0;
+    }
+
+}
+
+/* mobile phones and small tablets */
+@media screen and (max-width:767px) {
+
+    #nav,
+    #logo,
+    .user_info,
+    .user_dropdown,
+    .button_reset,
+    #adv_search_form,
+    .header_buttons,
+    .property_top,
+    .filter_dropdown {
+        display: none;
+    }
+    .user_dropdown,
+    #nav,
+    .menu_dropdown,
+    .header_buttons,
+    .sp-wrap {
+        padding: 0;
+    }
+    .heading {
+        padding-bottom: 100px;
+        padding-top: 100px;
+    }
+    .dropdown_content,
+    .filters_content,
+    .qu_inner,
+    .price_inner {
+        position: relative;
+    }
+    .headline,
+    #nav_top {
+        text-align: center;
+    }
+    .menu_dropdown,
+    .btn_filters,
+    .filters_menu {
+        display: block;
+    }
+
+    .login {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #content {
+        margin-top: 20px;
+    }
+    .add_rs_inputs {
+        float: left;
+        margin: 10px 0;
+    }
+    .add_rs_top,
+    .add_rs_title,
+    .add_rs_middle,
+    .add_rs_description,
+    .add_rs_lower,
+    .button_search,
+    .add_rs_inputs input,
+    .add_rs_inputs select,
+    #address,
+    .log_form,
+    .register_form,
+    .data_id p {
+        margin: 0;
+    }
+
+    .form_search,
+    #address,
+    .inputs_search,
+    #p_min_search,
+    #p_max_search,
+    #qu_min,
+    #qu_max,
+    .button_search,
+    .content input,
+    .content select,
+    .profile_container,
+    .price_wrap,
+    .heat_wrap,
+    .price_wrap,
+    .park_wrap,
+    .qu_wrap {
+        width: 100%;
+    }
+
+    .price_wrap,
+    .heat_wrap,
+    .price_wrap,
+    .park_wrap,
+    .qu_wrap {
+        margin: 10px 0 0 0;
+    }
+
+    .add_rs_top .add_rs_inputs,
+    .add_rs_lower .add_rs_inputs,
+    .add_rs_middle .add_rs_inputs,
+    .add_rs_bottom .add_rs_inputs,
+    .service_article {
+        flex-basis: 100%;
+    }
+
+    .search_wrap {
+        margin: 0 0 10px 0;
+    }
+    .layer,
+    .rr {
+        padding-top: 50px;
+    }
+
+    .data {
+        flex-basis: 100%;
+    }
+    #main {
+        padding: 150px 0;
+    }
+    #header {
+        min-height: auto;
+    }
+    .menu_dropdown,
+    #nav ul li,
+    #nav,
+    .user_dropdown,
+    .search_wrap,
+    .header_buttons,
+    .log_form,
+    .register_form,
+    .profile_info,
+    .profile_img {
+        float: none;
+    }
+
+    .content input,
+    .content select,
+    .button_search {
+        margin-top: 10px;
+    }
+
+    .profile_img,
+    #profile_table h1 {
+        text-align: center;
+    }
+    .profile_info {
+        width: 80%;
+    }
+
+    .data {
+        margin-right: 0;
+    }
+    .data_content {
+        padding: 10px;
+        font-size: 3vw;
+    }
+    .rooms,
+    .data_id {
+        padding: 5px;
+        margin: 0;
+    }
+    .rooms i,
+    .button_search {
+        font-size: .9em;
+    }
+    .data_headline,
+    .data_bottom,
+    .data_img {
+        height: auto;
+    }
+
+    .filters_menu {
+        top: 52px;
+    }
+    .sp-wrap {
+        margin-top: 39px;
+    }
+}

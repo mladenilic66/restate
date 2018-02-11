@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start(); 
 if (isset($_SESSION['usr_id'])) { ?>
-<?php include_once("/header.php"); ?>
+<?php include_once("header.php"); ?>
     <section class="profile_main">
         <div class="profile_container">
         <?php
@@ -15,16 +15,16 @@ if (isset($_SESSION['usr_id'])) { ?>
             	$image = $row['avatar'];
             ?>
             
-            <div class="profile_img_cont">
-                <div class="profile_img">
-            	    <!-- swich image -->
-                    <?php if(!empty($image)) { ?>
-					    <img src="/uploads/user_images/<?=$image?>" alt="profile_image">
-					<?php } else { ?>
-					    <img src="/uploads/user_images/user.png" alt="profile_image">
-					<?php } ?>
-                </div>
+
+            <div class="profile_img">
+        	    <!-- swich image -->
+                <?php if(!empty($image)) { ?>
+				    <img src="uploads/user_images/<?=$image?>" alt="profile_image">
+				<?php } else { ?>
+				    <img src="uploads/user_images/user.png" alt="profile_image">
+				<?php } ?>
             </div>
+
             <div class="profile_info">
                 <table id="profile_table">
                 	<tr>
@@ -51,5 +51,5 @@ if (isset($_SESSION['usr_id'])) { ?>
             <?php } ?>
 	    </div>
 	</section>
-<?php include_once("/footer.php"); ?>
-<?php } else { header("Location: /index.php"); } ?>
+<?php include_once("footer.php"); ?>
+<?php } else { header("Location: index.php"); } ?>
