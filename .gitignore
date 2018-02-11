@@ -1,5 +1,5 @@
 db_con.php
-uploads/
+uploads/*
 
 *.ini
 *.lnk
